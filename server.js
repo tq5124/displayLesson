@@ -8,7 +8,9 @@ http.createServer(function(request, response) {
 	if (pathname == "/displayLesson/"){
 		fs.readFile("./boot.html", function(err, html){
 			response.write(html);
+			response.end();
 		});
+	} else{
+		response.end();
 	}
-	response.end();
 }).listen(8877);
